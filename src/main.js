@@ -3,21 +3,16 @@
 import Vue from 'vue';
 import App from './App';
 import router from './router';
-import test from './services/index';
+import store from './vuex/store';
+import 'common/stylus/index.styl';
+import footer from 'components/common/footer/footer';
 
+Vue.component('meFooter', footer);
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
+  store,
   template: '<App/>',
-  components: { App },
-  mounted () {
-    test.get('/Code/SendRegisterCode', {
-      userName: '17600082709'
-    }).then((data) => { return data; });
-    test.post('/Login/UserLogin', {
-      userName: '17600082709',
-      userPass: '123'
-    });
-  }
+  components: { App }
 });

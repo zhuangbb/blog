@@ -29,9 +29,9 @@ module.exports = {
       'src': resolve('src'),
       'assets': resolve('src/assets'),
       'components': resolve('src/components'),
+      'common': resolve('src/common'),
       'services': resolve('src/services'),
-      'views': resolve('src/views'),
-      'vuex': resolve('src/vuex')
+      'views': resolve('src/views')
     }
   },
   module: {
