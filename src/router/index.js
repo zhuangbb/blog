@@ -21,8 +21,7 @@ const router = new Router({
 });
 router.push('/login');
 router.beforeEach((to, from, next) => {
-  console.log('wq');
-  if (to.name !== '/login') {
+  if (to.path !== '/login') {
     if (store.state.token.token === null) {
       next('/login');
     } else {
