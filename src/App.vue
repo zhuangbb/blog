@@ -1,5 +1,6 @@
 <template>
   <div class="app">
+    <me-header></me-header>
     <router-view></router-view>
     <me-Footer></me-Footer>
   </div>
@@ -9,4 +10,3 @@
 export default {
 };
 </script>
-

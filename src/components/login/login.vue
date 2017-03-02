@@ -1,8 +1,5 @@
 <template>
   <div class="login">
-    <div class="logo-wrapper border-1px">
-      <img src="../../assets/logo.png" class="logo">
-    </div>
     <div class="login-wrapper">
       <div class="login-header">Terry-Blog</div>
       <div class="login-body">
@@ -56,14 +53,14 @@ export default {
 @import '../../common/stylus/settings.styl'
 .login
   .logo-wrapper
-    padding 15px 0
+    padding 10px 0
     text-align center
     border-1px(#eee)
     .logo
-      height 50px   
+      height 35px   
   .login-wrapper
     display flex
-    margin 45px auto 0 auto
+    margin 40px auto 0 auto
     padding 15px
     max-width 350px
     flex-direction column

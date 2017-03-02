@@ -1,14 +1,19 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import store from '../vuex/store';
-import login from 'components/login/login';
+import home from 'components/home/home';
 
 Vue.use(Router);
 
 const routes = [{
+      path: '/home',
+      name: 'home',
+      component: home
+    },
+    {
       path: '/login',
       name: 'login',
-      component: login
+      component: reslove => require(['components/login/login'], reslove)
     },
     {
       path: '/posts',
@@ -17,13 +22,17 @@ const routes = [{
     }];
 
 const router = new Router({
-  routes
+  routes,
+  mode: 'hash'
 });
-router.push('/login');
+router.replace('/home');
 router.beforeEach((to, from, next) => {
+  if (to.path === '/home' || to.path === '/') {
+    next();
+  }
   if (to.path !== '/login') {
     if (store.state.token.token === null) {
-      next('/login');
+      next('/home');
     } else {
       next();
     }
@@ -34,7 +43,7 @@ router.beforeEach((to, from, next) => {
       if (from.path !== undefined) {
         next('/' + from.path);
       } else {
-        next('/posts');
+        next('/login');
       }
     }
   }

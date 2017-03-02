@@ -5,8 +5,10 @@ import App from './App';
 import router from './router';
 import store from './vuex/store';
 import 'common/stylus/index.styl';
+import header from 'components/common/header/header';
 import footer from 'components/common/footer/footer';
 
+Vue.component('meHeader', header);
 Vue.component('meFooter', footer);
 /* eslint-disable no-new */
 new Vue({
